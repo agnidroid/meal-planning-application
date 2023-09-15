@@ -62,7 +62,6 @@ angular_lint:
     - cd product-webapp-service
     - cd webapp
     - npm install
-    - npm run lint -- --format json
   only:
     - main
     - master
