@@ -10,7 +10,7 @@ stages:
   - ng_quality
 
 maven_build:
-  image: maven:3-jdk-11
+  image: maven:3-openjdk-17
   stage: package
   script: mvn clean package -DskipTests=true -B
   only:
@@ -27,7 +27,7 @@ maven_build:
       - /target/*.jar
 
 test_coverage:
-  image: maven:3-jdk-11
+  image: maven:3-openjdk-17
   stage: test
   only:
     - main
@@ -41,7 +41,7 @@ test_coverage:
     - mvn clean test
 
 java_lint:
-  image: maven:3-jdk-11
+  image: maven:3-openjdk-17
   stage: java_quality
   script:
     - mvn -Dmaven.repo.local=/root/.m2/repository clean install -DskipTests=true -B
