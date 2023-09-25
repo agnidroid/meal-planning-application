@@ -1,0 +1,18 @@
+<!-- Search Bar -->
+
+<div class="search-container">
+    <input type="text" placeholder="Search for recipes"  class="search-input">
+    <button  class="search-button">
+        Search
+    </button>
+</div>
+
+<header>
+    <h2>Favorite Recipe</h2>
+</header>
+
+<div *ngFor="let recipe of favRecipe">
+    <!-- Display favorite recipes here -->
+    {{ recipe.strMeal }}
+  </div>
+ 
