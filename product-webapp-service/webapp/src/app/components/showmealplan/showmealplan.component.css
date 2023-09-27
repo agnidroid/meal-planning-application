@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    
+    height: 100%;
+    width: 100%;
+    background-color: rgb(247, 241, 240);
+    
+}
+.image{
+    background-image: url("https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    height: 244px;
+    margin-bottom: 20px;
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+.GenButton{
+    margin-left: 40px;
+    background-color:  orange;
+    border: none;
+    padding: 4px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    
+  }
+.DelButton{
+    margin-right: 40px;
+    border: none;
+    padding: 4px 20px;
+    border-radius: 4px;
+    background-color:  red;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.DelButton,.GenButton:active {
+    transform: translateY(2px); /* Slight downward push on click */
+  }
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: rgb(247, 241, 240);
+  }
+  .container{
+    background-color: #c9e8ea;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+  border-radius: 7px;
+  }
+.col{
+    margin: 20px 40px;
+}
+.randomIcon{
+    height: 20px;
+    align-self: end;
+
+}
+.total-calories{
+    margin-left: 20px;
+    margin-top: 5px;
+}
