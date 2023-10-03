@@ -14,6 +14,7 @@ import { GenerateMealplanDialogComponent } from '../generate-mealplan-dialog/gen
 
 })
 export class ShowmealplanComponent implements OnInit {
+  userId:number=100
   mealPlanPerDayList: MealPlanPerDay[] = [];
   x: number = 0;
   mealTime:string[]=["Breakfast","Lunch","Dinner"]
@@ -21,7 +22,7 @@ export class ShowmealplanComponent implements OnInit {
     this.getTodayDate()
   }
   getTodayDate(){
-      this.mealPlanService.delFromFirst().subscribe((response)=>{
+      this.mealPlanService.delFromFirst(this.userId).subscribe((response)=>{
         this.getMealPlanOfPerson()
       })
   }
@@ -41,12 +42,12 @@ export class ShowmealplanComponent implements OnInit {
 
   }
   countPerDayPerUser() {
-    this.mealPlanService.countPerDayPerUser().subscribe((response) => {
+    this.mealPlanService.countPerDayPerUser(this.userId).subscribe((response) => {
       this.x = response
     })
   }
   getMealPlanOfPerson() {
-    this.mealPlanService.getMealPlanOfPerson().subscribe((response) => {
+    this.mealPlanService.getMealPlanOfPerson(this.userId).subscribe((response) => {
       this.mealPlanPerDayList = response;
       this.countPerDayPerUser()
     })
@@ -54,7 +55,7 @@ export class ShowmealplanComponent implements OnInit {
   }
   delFromLast() {
     console.log("workingg")
-    this.mealPlanService.delFromLast().subscribe((response) => {
+    this.mealPlanService.delFromLast(this.userId).subscribe((response) => {
       this.getMealPlanOfPerson()
       console.log(response)
       console.log("Working")
@@ -78,9 +79,7 @@ export class ShowmealplanComponent implements OnInit {
       this.getMealPlanOfPerson()
     });
   }
-  getItsMealPLan(mealPlanEach: MealPlanEach) {
-    return "632854"
-  }
+
 
   ngOnInit(): void {
   }
