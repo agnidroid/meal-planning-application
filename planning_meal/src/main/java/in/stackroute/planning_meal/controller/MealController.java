@@ -27,25 +27,25 @@ public class MealController {
 
         return ResponseEntity.ok(mealService.genOneDayMealPlan(totalCalories));
     }
-    @GetMapping("/get-meal-plan-of-person")
-    public  ResponseEntity<?> getMealPlanOfPerson(){
-        return ResponseEntity.ok(mealService.getMealPlanOfPerson());
+    @GetMapping("/get-meal-plan-of-person/userId={userId}")
+    public  ResponseEntity<?> getMealPlanOfPerson(@PathVariable int userId){
+        return ResponseEntity.ok(mealService.getMealPlanOfPerson(userId));
     }
 
-    @GetMapping("/count-per-day-per-user")
-    public  ResponseEntity<?> countPerDayPerUser(){
-        return ResponseEntity.ok(mealService.countPerDayPerUser(100));
+    @GetMapping("/count-per-day-per-user/userId={userId}")
+    public  ResponseEntity<?> countPerDayPerUser(@PathVariable int userId){
+        return ResponseEntity.ok(mealService.countPerDayPerUser(userId));
     }
-    @DeleteMapping("/delete-from-last")
-    public void deleteFromLast(){
-        mealService.deleteFromLast();
+    @DeleteMapping("/delete-from-last/userId={userId}")
+    public void deleteFromLast(@PathVariable int userId){
+        mealService.deleteFromLast(userId);
     }
     @PutMapping("/gen-random-on-existing-id")
     public void genRandomOnExistingId(@RequestBody MealPlanPerDay mealPlanPerDay)  {
         mealService.genRandomOnExistingId(mealPlanPerDay);
     }
-    @DeleteMapping("/del-from-first")
-    public void deleteFromFirst(){
-        mealService.deleteFromFirst();
+    @DeleteMapping("/del-from-first/userId={userId}")
+    public void deleteFromFirst(@PathVariable int userId){
+        mealService.deleteFromFirst(userId);
     }
 }

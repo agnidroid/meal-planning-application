@@ -86,11 +86,11 @@ public class MealService {
         return mealPlanRepository.findByExampleAndQueryFunction(fieldName, value);
     }
 
-    public Object getMealPlanOfPerson() {
-        return findByExampleAndQueryFunction("userId",100);
+    public Object getMealPlanOfPerson(int userId) {
+        return findByExampleAndQueryFunction("userId",userId);
     }
-    public void deleteFromLast(){
-        List<MealPlanPerDay> mealPlanPerDayList=findByExampleAndQueryFunction("userId",100);
+    public void deleteFromLast(int userId){
+        List<MealPlanPerDay> mealPlanPerDayList=findByExampleAndQueryFunction("userId",userId);
         int l=mealPlanPerDayList.size();
         if(l>0){
             UUID id=mealPlanPerDayList.get(l-1).getMealId();
@@ -138,9 +138,9 @@ public class MealService {
     }
 
 
-    public void deleteFromFirst() {
+    public void deleteFromFirst(int userId) {
         String date=LocalDate.now().format(DateTimeFormatter.ISO_DATE);
-        List<MealPlanPerDay> mealPlanPerDayList=findByExampleAndQueryFunction("userId",100);
+        List<MealPlanPerDay> mealPlanPerDayList=findByExampleAndQueryFunction("userId",userId);
         int l=mealPlanPerDayList.size();
         while(l>0 && !Objects.equals(mealPlanPerDayList.get(0).getDate(), date)){
             UUID id = mealPlanPerDayList.get(0).getMealId();
