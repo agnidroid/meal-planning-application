@@ -145,6 +145,7 @@ public class MealService {
         while(l>0 && !Objects.equals(mealPlanPerDayList.get(0).getDate(), date)){
             UUID id = mealPlanPerDayList.get(0).getMealId();
             mealPlanRepository.deleteById(id);
+            l=l-1;
         }
     }
 }
