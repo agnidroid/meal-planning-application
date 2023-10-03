@@ -20,7 +20,13 @@
     <h3>Category : {{recipe.strCategory}}</h3>
 
  <!-- Add to favorites button -->
- <button (click)="addToFavorites(recipe)" class="add-to-favorites-button">Add</button>
+ <!-- <button (click)="addToFavorites(recipe)" class="add-to-favorites-button">Add</button> -->
+  <!-- Add to favorites button -->
+  <button (click)="addToFavorites(recipe)"
+  class="add-to-favorites-button"
+  [disabled]="recipe.isFavorite"> <!-- Disable the button if it's already a favorite -->
+  {{ recipe.isFavorite ? 'Added' : 'Add' }} <!-- Change button text based on isFavorite flag -->
+</button>
 
 
     <!-- You can add more details about the recipe here if needed -->

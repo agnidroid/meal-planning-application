@@ -9,7 +9,7 @@ export class RecipeService {
   private apiUrl = 'https://www.themealdb.com/api/json/v2/9973533';
 
   constructor(private http: HttpClient) {}
-
+  
   // Get a list of categories
   getCategories(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/categories.php`);

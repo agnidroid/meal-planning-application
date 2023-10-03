@@ -73,3 +73,55 @@
     margin: 0;
   }
   
+
+
+
+
+
+
+
+
+  /* Style for the recipe card container */
+.recipe-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Style for individual recipe cards */
+.recipe-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+/* Style for the header section */
+.recipe-card-header {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.recipe-card-header h3 {
+  margin: 0;
+}
+
+/* Style for the image */
+.recipe-card-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style for the body section */
+.recipe-card-body {
+  padding: 10px;
+}
+
+/* Style for the details */
+.recipe-card-body p {
+  margin: 5px 0;
+}
