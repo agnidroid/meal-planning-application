@@ -18,7 +18,7 @@ export class NotificationService {
   }
   
   fetchMeal(){
-    return this.http.get(this.url+"/5");
+    return this.http.get(this.url+"/1");
   }
 
   ShowHTMLsuccess(title: string, body:string){
