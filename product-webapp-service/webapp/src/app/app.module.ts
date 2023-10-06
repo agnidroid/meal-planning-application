@@ -17,7 +17,9 @@ import { GenerateMealplanDialogComponent } from './components/generate-mealplan-
 import { MealplanDialogComponent } from './components/mealplan-dialog/mealplan-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { DieterFormComponent } from './dieter-form/dieter-form.component';
+import { GetResultComponent } from './get-result/get-result.component';
+// import { DatePickerComponent } from './date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatInputModule } from '@angular/material/input';
     ShowmealplanComponent,
     DialogElementsExampleComponent,
     GenerateMealplanDialogComponent,
-    MealplanDialogComponent
+    MealplanDialogComponent,
+    DieterFormComponent,
+    GetResultComponent
   ],
   imports: [
     BrowserModule,
