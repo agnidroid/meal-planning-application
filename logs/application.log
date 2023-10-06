@@ -64,3 +64,37 @@
 2023-09-27 09:40:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-27 09:40:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2023-09-27 09:40:42 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-10-06 11:04:47 [main] INFO  i.s.u.UserNotifiactionServiceApplication - Starting UserNotifiactionServiceApplication using Java 17.0.8 with PID 6752 (C:\Users\varun\angular\Meal-Planner\mealplan\UserNotifiactionService\target\classes started by varun in C:\Users\varun\angular\Meal-Planner\mealplan)
+2023-10-06 11:04:47 [main] INFO  i.s.u.UserNotifiactionServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2023-10-06 11:04:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-06 11:04:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 1 JPA repository interfaces.
+2023-10-06 11:04:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8452 (http)
+2023-10-06 11:04:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-10-06 11:04:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-06 11:04:50 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-10-06 11:04:50 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2426 ms
+2023-10-06 11:04:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-06 11:04:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-10-06 11:04:50 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2023-10-06 11:04:50 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-10-06 11:04:50 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-06 11:04:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-10-06 11:04:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2e7bb00e
+2023-10-06 11:04:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-10-06 11:04:53 [main] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-10-06 11:04:54 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2023-10-06 11:04:54 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-06 11:04:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-06 11:04:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-06 11:04:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8452 (http) with context path ''
+2023-10-06 11:04:55 [main] INFO  i.s.u.UserNotifiactionServiceApplication - Started UserNotifiactionServiceApplication in 9.744 seconds (process running for 11.483)
+2023-10-06 11:05:45 [http-nio-8452-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-06 11:05:47 [http-nio-8452-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-10-06 11:05:47 [http-nio-8452-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 205 ms
+2023-10-06 11:05:50 [http-nio-8452-exec-4] DEBUG org.hibernate.SQL - select n1_0.id,n1_0.body,n1_0.notify_id,n1_0.title from notification n1_0
+2023-10-06 11:05:50 [http-nio-8452-exec-4] DEBUG org.hibernate.SQL - select m1_0.meal_id,m1_0.breakfast,m1_0.dinner,m1_0.lunch from meal m1_0 where m1_0.meal_id=?
+2023-10-06 11:05:50 [http-nio-8452-exec-4] DEBUG org.hibernate.SQL - select m1_0.meal_id,m1_0.breakfast,m1_0.dinner,m1_0.lunch from meal m1_0 where m1_0.meal_id=?
+2023-10-06 11:05:50 [http-nio-8452-exec-4] DEBUG org.hibernate.SQL - select m1_0.meal_id,m1_0.breakfast,m1_0.dinner,m1_0.lunch from meal m1_0 where m1_0.meal_id=?
+2023-10-06 11:06:28 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-06 11:06:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-10-06 11:06:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
