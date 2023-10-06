@@ -683,3 +683,6 @@ in.stackroute.usernotifiactionservice.exceptions.NotificationNotFoundException: 
 2023-10-06 14:41:02 [http-nio-8452-exec-5] DEBUG org.hibernate.SQL - select n1_0.id,n1_0.breakfast,n1_0.dinner,n1_0.lunch,n1_0.body,n1_0.title from notification n1_0 where n1_0.id=?
 2023-10-06 14:41:29 [http-nio-8452-exec-10] DEBUG org.hibernate.SQL - select n1_0.id,n1_0.breakfast,n1_0.dinner,n1_0.lunch,n1_0.body,n1_0.title from notification n1_0 where n1_0.id=?
 2023-10-06 14:41:32 [http-nio-8452-exec-4] DEBUG org.hibernate.SQL - select n1_0.id,n1_0.breakfast,n1_0.dinner,n1_0.lunch,n1_0.body,n1_0.title from notification n1_0 where n1_0.id=?
+2023-10-06 14:58:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-06 14:58:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-10-06 14:58:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
