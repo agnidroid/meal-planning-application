@@ -2,17 +2,20 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Notification-service" />
         <module name="review-service" />
         <module name="buyer-service" />
+        <module name="email-service" />
+        <module name="api-gateway" />
+        <module name="UserNotifiactionService" />
         <module name="product-service" />
         <module name="eureka-server" />
         <module name="product-webapp-service" />
-        <module name="email-service" />
-        <module name="api-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,7 +25,10 @@
       <module name="config-server" target="17" />
       <module name="feedback-service" target="17" />
       <module name="MealPlan" target="17" />
+      <module name="mealplan" target="17" />
+      <module name="Notification-popups" target="17" />
       <module name="notification-service" target="17" />
+      <module name="Notification-webapp-Service" target="17" />
       <module name="order-service" target="17" />
       <module name="payment-service" target="17" />
       <module name="product-boilerplate" target="1.5" />
@@ -38,6 +44,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Notification-service" options="-parameters" />
+      <module name="UserNotifiactionService" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="authentication-service" options="-parameters" />
       <module name="booking-service" options="-parameters" />

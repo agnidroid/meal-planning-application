@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +20,12 @@ import { MatInputModule } from '@angular/material/input';
 import { DieterFormComponent } from './dieter-form/dieter-form.component';
 import { GetResultComponent } from './get-result/get-result.component';
 // import { DatePickerComponent } from './date-picker/date-picker.component';
+import { ToastrModule } from 'ngx-toastr';
+
+
+import { NotificationComponent } from './component/notification/notification.component';
+import { NotificationService } from './services/notification.service';
+import { RouterModule , Routes} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,8 @@ import { GetResultComponent } from './get-result/get-result.component';
     GenerateMealplanDialogComponent,
     MealplanDialogComponent,
     DieterFormComponent,
-    GetResultComponent
+    GetResultComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +56,15 @@ import { GetResultComponent } from './get-result/get-result.component';
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    RouterModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [NotificationService],
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }
