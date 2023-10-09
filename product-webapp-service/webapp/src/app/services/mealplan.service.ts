@@ -10,9 +10,9 @@ export class MealplanService {
 
   url:string="http://localhost:8081/meal/";
   constructor(private http:HttpClient) { }
-  genOneDayMealPlan(totalCalories:number){
+  genOneDayMealPlan(totalCalories:number,id:number){
     console.log("One day meal wor")
-    return this.http.get<MealPlanPerDay>(this.url+"gen-meals-for-one-day"+"/Calories="+totalCalories.toString())
+    return this.http.get<MealPlanPerDay>(this.url+"gen-meals-for-one-day"+"/Calories="+totalCalories.toString()+"/user-id="+id.toString())
   }
   getMealPlanOfPerson(userId:number){ 
     return this.http.get<MealPlanPerDay[]>(this.url+"get-meal-plan-of-person/userId="+userId.toString())

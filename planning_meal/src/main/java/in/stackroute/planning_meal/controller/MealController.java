@@ -22,10 +22,10 @@ public class MealController {
     public MealController(MealService mealService){
         this.mealService=mealService;
     }
-    @GetMapping("/gen-meals-for-one-day/Calories={totalCalories}")
-    public ResponseEntity<?> genOneDayMealPlan(@PathVariable int totalCalories){
+    @GetMapping("/gen-meals-for-one-day/Calories={totalCalories}/user-id={id}")
+    public ResponseEntity<?> genOneDayMealPlan(@PathVariable int totalCalories,@PathVariable int id){
 
-        return ResponseEntity.ok(mealService.genOneDayMealPlan(totalCalories));
+        return ResponseEntity.ok(mealService.genOneDayMealPlan(totalCalories,id));
     }
     @GetMapping("/get-meal-plan-of-person/userId={userId}")
     public  ResponseEntity<?> getMealPlanOfPerson(@PathVariable int userId){

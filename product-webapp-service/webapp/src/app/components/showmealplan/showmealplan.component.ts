@@ -6,6 +6,8 @@ import { DialogElementsExampleComponent } from '../dialog-elements-example/dialo
 import { MatDialog } from '@angular/material/dialog';
 import { MealplanDialogComponent } from '../mealplan-dialog/mealplan-dialog.component';
 import { GenerateMealplanDialogComponent } from '../generate-mealplan-dialog/generate-mealplan-dialog.component';
+import { SimpleServiceService } from 'src/app/services/simple-service.service';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-showmealplan',
@@ -15,12 +17,21 @@ import { GenerateMealplanDialogComponent } from '../generate-mealplan-dialog/gen
 })
 export class ShowmealplanComponent implements OnInit {
   userId:number=100
+  user:User=new User()
   mealPlanPerDayList: MealPlanPerDay[] = [];
   x: number = 0;
   mealTime:string[]=["Breakfast","Lunch","Dinner"]
-  constructor(private mealPlanService: MealplanService, public dialog: MatDialog) {
-    this.getTodayDate()
+  constructor(private mealPlanService: MealplanService, public dialog: MatDialog,public simpleService:SimpleServiceService) {
+    this.user=this.simpleService.user
+    this.simpleService.getCurrentId(this.user.emailId).subscribe((response)=>{
+      this.userId=response
+      console.log("ShowmealPlanUserId"+this.userId)
+      this.getTodayDate()
+    })
+    
+    
   }
+  
   getTodayDate(){
       this.mealPlanService.delFromFirst(this.userId).subscribe((response)=>{
         this.getMealPlanOfPerson()
@@ -44,11 +55,22 @@ export class ShowmealplanComponent implements OnInit {
   countPerDayPerUser() {
     this.mealPlanService.countPerDayPerUser(this.userId).subscribe((response) => {
       this.x = response
+      console.log("this is count "+this.x+"!!!")
     })
   }
   getMealPlanOfPerson() {
     this.mealPlanService.getMealPlanOfPerson(this.userId).subscribe((response) => {
       this.mealPlanPerDayList = response;
+      if(this.mealPlanPerDayList.length==0){
+        this.simpleService.mealPlanToDay=[]
+      }
+      else{
+        var breakfast=this.mealPlanPerDayList[0].mealPlanEachList[0].name
+        var lunch=this.mealPlanPerDayList[0].mealPlanEachList[1].name
+        var dinner=this.mealPlanPerDayList[0].mealPlanEachList[2].name
+        this.simpleService.mealPlanToDay=[breakfast,lunch,dinner]
+      }
+      console.log("Length of mealPlanPerDayList "+this.simpleService.mealPlanToDay)
       this.countPerDayPerUser()
     })
     console.log(this.mealPlanPerDayList)

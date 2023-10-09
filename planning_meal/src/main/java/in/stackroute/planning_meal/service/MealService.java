@@ -32,14 +32,14 @@ public class MealService {
     private final MongoTemplate mongoTemplate;
     @Autowired
     private RestTemplate restTemplate;
-    public Object genOneDayMealPlan(int totalCalories) {
-        return genAndStoreMeal(totalCalories);
+    public Object genOneDayMealPlan(int totalCalories,int id) {
+        return genAndStoreMeal(totalCalories,id);
 
 // Create an ObjectMapper instance
     }
 
 
-    public Object genAndStoreMeal(int totalCalories){
+    public Object genAndStoreMeal(int totalCalories,int id){
         String url1="https://api.spoonacular.com/mealplanner/generate?apiKey=c630e262bbaf4b6eaad75bb7747ce9f4" +
                 "&timeFrame=day&targetCalories="+Integer.toString(totalCalories);
         HttpHeaders headers=new HttpHeaders();
@@ -52,9 +52,9 @@ public class MealService {
             // Access the meals and nutrients from the MealResponse object
             List<Meal> meals = mealResponse.getMeals();
             MealPlanPerDay mealPlanPerDay=new MealPlanPerDay();
-            mealPlanPerDay.setDate(getDate(mealPlanPerDay.getUserId()));
+            mealPlanPerDay.setDate(getDate(id));
             mealPlanPerDay.setMealId(UUID.randomUUID());
-            mealPlanPerDay.setUserId(100);
+            mealPlanPerDay.setUserId(id);
             // Now you can work with the meals and nutrients objects
             List<MealPlanEach> listMeals=new ArrayList<>();
             for (int i=0;i<3;i++) {
@@ -79,7 +79,7 @@ public class MealService {
         return json;
     }
     public int countPerDayPerUser(int userId){
-        List<MealPlanPerDay> mealPlanPerDayList=findByExampleAndQueryFunction("userId",100);
+        List<MealPlanPerDay> mealPlanPerDayList=findByExampleAndQueryFunction("userId",userId);
         return mealPlanPerDayList.size();
     }
     public List<MealPlanPerDay> findByExampleAndQueryFunction(String fieldName, Object value) {
@@ -87,7 +87,9 @@ public class MealService {
     }
 
     public Object getMealPlanOfPerson(int userId) {
+
         return findByExampleAndQueryFunction("userId",userId);
+
     }
     public void deleteFromLast(int userId){
         List<MealPlanPerDay> mealPlanPerDayList=findByExampleAndQueryFunction("userId",userId);
@@ -134,6 +136,7 @@ public class MealService {
     }
     public String getDate(int userId){
         int count=countPerDayPerUser(userId);
+        System.out.println("Spring Boot getDate"+count);
         return (LocalDate.now().plusDays(count)).format(DateTimeFormatter.ISO_DATE);
     }
 
