@@ -1,9 +1,11 @@
 /* container */
 .container{
     display: grid;
-    grid-column-gap: 1rem;
+    padding: 0;
+    min-width: 100% !important;
     grid-template-columns: 250px auto;
 }
+
 
 /* Sidebar container */
 .sidebar {
@@ -83,4 +85,14 @@ nav a:nth-child(6), nav a:nth-child(7) {
   
   .content {
     grid-column: 2/-1;
+  }
+
+
+  @media (min-width: 1400px){
+    .container {
+      grid-template-columns: 300px auto;
+    }
+    .sidebar {
+      width: 300px !important;
+    }
   }
