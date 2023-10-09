@@ -48,6 +48,13 @@ import { FavoriteRecipeComponent } from './component/favorite-recipe/favorite-re
 import { MyFoodComponent } from './component/my-food/my-food.component';
 
 
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { MealPlansComponent } from './meal-plans/meal-plans.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LogoutComponent } from './profile/logout/logout.component';
+import { AccountSettingComponent } from './profile/account-setting/account-setting.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +78,14 @@ import { MyFoodComponent } from './component/my-food/my-food.component';
     SearchRecipeComponent,
     FavoriteRecipeComponent,
     MyFoodComponent,
-    RecipeComponent
+    RecipeComponent,
+    DashboardComponent,
+    HomeComponent,
+    MealPlansComponent,
+    RecipesComponent,
+    ProfileComponent,
+    LogoutComponent,
+    AccountSettingComponent,
     
   ],
   imports: [

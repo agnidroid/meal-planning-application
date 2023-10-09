@@ -9,6 +9,12 @@ import { MyFoodComponent } from './component/my-food/my-food.component';
 import { FavoriteRecipeComponent } from './component/favorite-recipe/favorite-recipe.component';
 import { SearchRecipeComponent } from './component/search-recipe/search-recipe.component';
 import { CategoryComponent } from './component/category/category.component';
+import { HomeComponent } from './home/home.component';
+import { MealPlansComponent } from './meal-plans/meal-plans.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LogoutComponent } from './profile/logout/logout.component';
+import { AccountSettingComponent } from './profile/account-setting/account-setting.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -23,12 +29,20 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'favorites', component: FavoriteRecipeComponent },
   { path: 'my-food', component: MyFoodComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'meal-plans', component: MealPlansComponent },
+  { path: 'recipes', component: RecipesComponent },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    children: [
+      { path: 'account-settings', component: AccountSettingComponent },
+      { path: 'logout', component: LogoutComponent }
+    ]
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' }
 ];
-
-
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
