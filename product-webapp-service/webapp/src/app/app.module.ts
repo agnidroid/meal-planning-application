@@ -50,11 +50,10 @@ import { MyFoodComponent } from './component/my-food/my-food.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { MealPlansComponent } from './meal-plans/meal-plans.component';
-import { RecipesComponent } from './recipes/recipes.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './profile/logout/logout.component';
 import { AccountSettingComponent } from './profile/account-setting/account-setting.component';
+import { DemoFeedbackComponent } from './demo-feedback/demo-feedback.component';
 
 @NgModule({
   declarations: [
@@ -81,11 +80,10 @@ import { AccountSettingComponent } from './profile/account-setting/account-setti
     RecipeComponent,
     DashboardComponent,
     HomeComponent,
-    MealPlansComponent,
-    RecipesComponent,
     ProfileComponent,
     LogoutComponent,
     AccountSettingComponent,
+    DemoFeedbackComponent,
     
   ],
   imports: [

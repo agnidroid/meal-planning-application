@@ -10,15 +10,18 @@ import { FavoriteRecipeComponent } from './component/favorite-recipe/favorite-re
 import { SearchRecipeComponent } from './component/search-recipe/search-recipe.component';
 import { CategoryComponent } from './component/category/category.component';
 import { HomeComponent } from './home/home.component';
-import { MealPlansComponent } from './meal-plans/meal-plans.component';
-import { RecipesComponent } from './recipes/recipes.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './profile/logout/logout.component';
 import { AccountSettingComponent } from './profile/account-setting/account-setting.component';
+import { RecipeComponent } from './component/recipe/recipe.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ShowmealplanComponent } from './components/showmealplan/showmealplan.component';
+import { DieterFormComponent } from './dieter-form/dieter-form.component';
+import { DemoFeedbackComponent } from './demo-feedback/demo-feedback.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'loginsuccess',component:LoginsuccessComponent},
+  {path:'loginsuccess',component:DashboardComponent},
   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
   {path: 'api/v1/dieters/:id', component: GetResultComponent},
@@ -30,8 +33,10 @@ const routes: Routes = [
   { path: 'favorites', component: FavoriteRecipeComponent },
   { path: 'my-food', component: MyFoodComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'meal-plans', component: MealPlansComponent },
-  { path: 'recipes', component: RecipesComponent },
+  { path: 'meal-plan', component: ShowmealplanComponent },
+  { path: 'recipe', component: RecipeComponent },
+  {path: 'generate-calories',component: DieterFormComponent},
+  {path: 'feedback',component: DemoFeedbackComponent},
   {
     path: 'profile',
     component: ProfileComponent,
