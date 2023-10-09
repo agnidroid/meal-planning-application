@@ -1,7 +1,10 @@
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -27,6 +30,25 @@ import { NotificationComponent } from './component/notification/notification.com
 import { NotificationService } from './services/notification.service';
 import { RouterModule , Routes} from '@angular/router';
 
+import { CategoryComponent } from './component/category/category.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+
+
+import { DescriptionModalComponent } from './component/description-modal/description-modal.component';
+import { HeaderComponent } from './component/shared/header/header.component';
+import { SidebarComponent } from './component/shared/sidebar/sidebar.component';
+import { RecipeComponent } from './component/recipe/recipe.component';
+import { SearchRecipeComponent } from './component/search-recipe/search-recipe.component';
+import { FavoriteRecipeComponent } from './component/favorite-recipe/favorite-recipe.component';
+import { MyFoodComponent } from './component/my-food/my-food.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +63,16 @@ import { RouterModule , Routes} from '@angular/router';
     MealplanDialogComponent,
     DieterFormComponent,
     GetResultComponent,
-    NotificationComponent
+    NotificationComponent,
+    CategoryComponent,
+    DescriptionModalComponent,
+    HeaderComponent,
+    SidebarComponent,
+    SearchRecipeComponent,
+    FavoriteRecipeComponent,
+    MyFoodComponent,
+    RecipeComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -55,10 +86,15 @@ import { RouterModule , Routes} from '@angular/router';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    FormsModule,
     MatInputModule,
     RouterModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    MatToolbarModule, // Add MatToolbarModule here
+    MatSidenavModule, // Import MatSidenavModule
+    MatInputModule,
+    NgxPaginationModule,
+    MatListModule
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent],

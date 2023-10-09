@@ -9,7 +9,7 @@ logging:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: Hondacity*1
+    password: jisuHARSH#99
     url: jdbc:mysql://localhost:3306/registrationdb
     username: root
   jpa:
