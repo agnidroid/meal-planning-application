@@ -4,9 +4,9 @@ spring:
   application:
     name: notify-jpa # Name of the application
   datasource:
-    url: jdbc:mysql://localhost:3306/cgi # URL of the database
+    url: jdbc:mysql://localhost:3306/notification # URL of the database
     username: root # Username of the database
-    password: Chvar@721 # Password of the database
+    password: jisuHARSH#99 # Password of the database
     driver-class-name: com.mysql.cj.jdbc.Driver # Driver class name of the databases
   jpa:
     # show-sql: true # Show SQL queries in the console

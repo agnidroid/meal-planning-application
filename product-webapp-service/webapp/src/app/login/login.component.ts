@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { RegistrationService } from '../registration.service';
 import { User } from '../user';
 import { Router } from '@angular/router';
+import { SimpleServiceService } from '../services/simple-service.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   user = new User();
   msg="";
 
-  constructor(private service:RegistrationService , private router: Router ) { }
+  constructor(private service:RegistrationService , private router: Router,public simpleService:SimpleServiceService ) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
     this.service.loginUserFromRemote(this.user).subscribe(
       data=> {
         console.log("response recieved")
+        this.setUser()
         this.router.navigate(['/loginsuccess'])
       },
       error => {
@@ -33,6 +35,11 @@ export class LoginComponent implements OnInit {
   gotoregistration(){
     this.router.navigate(['/registration']);
     
+  }
+  setUser(){
+    this.simpleService.user=this.user;
+    console.log("Login User   "+this.user.id)
+    console.log("Email Id  "+ this.user.emailId)
   }
 
 }

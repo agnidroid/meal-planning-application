@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-loginsuccess',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginsuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notify: NotificationService) {
+    // setTimeout(() => {
+    //   this.notify.ShowHTMLsuccess("<h6>" + "</h6>", "Welcome to MealPlan");
+    // }, 5000);
+
+  }
 
   ngOnInit(): void {
   }

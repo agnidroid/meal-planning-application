@@ -17,12 +17,12 @@ export class NotificationComponent implements OnInit {
   constructor(private notify: NotificationService) { }
 
   ngOnInit(): void {
-    this.shownoti();
-            setTimeout(() => {
-                this.shownoti(); 
-                }, 5000);
+    // this.shownoti();
+    //         setTimeout(() => {
+    //             this.shownoti(); 
+    //             }, 5000);
 
-    this.hour = this.rxTime.getHours();
+    // this.hour = this.rxTime.getHours();
   }
 
 
