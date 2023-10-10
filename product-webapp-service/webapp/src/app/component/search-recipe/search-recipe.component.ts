@@ -67,23 +67,19 @@ export class SearchRecipeComponent implements OnInit {
   //favRecipe: any = this.favoriteRecipeService.favoriteRecipes;
 
   addToFavorites(recipe: any) {
+    console.log(recipe);
     // Check if the recipe is already in favorites
-    if (!this.favoriteRecipeService.isRecipeInFavorites(recipe)) {
       // If not in favorites, add it to favorites
       this.favoriteRecipeService.addFavoriteRecipe(recipe).subscribe(
         (data) => {
           console.log(data);
           // Optionally, you can update the recipe object to indicate it's in favorites
-          recipe.isFavorite = true;
+          alert("Recipe added to favorite");
         },
         (err) => {
           console.log(err);
         }
       );
-    } else {
-      // Handle the case where the recipe is already in favorites
-      console.log('Recipe is already in favorites.');
-    }
   }
   
 
