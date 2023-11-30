@@ -21,13 +21,13 @@ import { DemoFeedbackComponent } from './demo-feedback/demo-feedback.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'loginsuccess',component:DashboardComponent},
+  {path:'loginsuccess',component:LoginsuccessComponent},
   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
   {path: 'api/v1/dieters/:id', component: GetResultComponent},
   {path: 'dieter/:id', component: GetResultComponent},
   {path: "notify", component: NotificationComponent},
-  { path: '', redirectTo: '/search', pathMatch: 'full' }, // Default route
+  // { path: '', redirectTo: '/search', pathMatch: 'full' }, // Default route
   { path: 'search', component: SearchRecipeComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'favorites', component: FavoriteRecipeComponent },
